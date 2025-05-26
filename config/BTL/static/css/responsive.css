@@ -1,0 +1,31 @@
+/* ============================
+   Responsive Styles
+   ============================ */
+
+   @media(max-width: 768px) {
+    .header-text { 
+      font-size: 2rem; 
+    }
+    
+    .positivity-card { 
+      padding: 2rem; 
+    }
+    
+    .main-heading { 
+      font-size: 2.5rem; 
+    }
+    
+    .message { 
+      font-size: 1.5rem; 
+    }
+    
+    .traits { 
+      font-size: 1rem; 
+      gap: 0.5rem; 
+    }
+    
+    .buttons-container { 
+      flex-direction: column; 
+      align-items: center; 
+    }
+  }

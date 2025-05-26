@@ -1,0 +1,160 @@
+/* ============================
+   1. Navbar Styles
+   ============================ */
+   .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,255,255,0.7));
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.18);
+    box-shadow: 0 4px 20px rgba(31,38,135,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  
+  .navbar:hover {
+    box-shadow: 0 8px 25px rgba(31,38,135,0.15);
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6d28d9, #4f46e5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 10px rgba(79,70,229,0.3);
+    transition: all 0.3s ease;
+  }
+  
+  .logo:hover {
+    transform: rotate(10deg) scale(1.1);
+  }
+  
+  .brand-name {
+    font-family: "GalanoGrotesqueW00-Bold", Arial, sans-serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-left: 1rem;
+    background: linear-gradient(to right, #4f46e5, #8b5cf6, #db2777);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 1px 5px rgba(79,70,229,0.2);
+  }
+  
+  .conditions {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .condition-tag {
+    padding: 0.5rem 1rem;
+    border-radius: 1.5rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  }
+  
+  .condition-tag:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .adhd {
+    background: linear-gradient(135deg, rgba(124,58,237,0.15), rgba(139,92,246,0.3));
+    color: #6d28d9;
+  }
+  
+  .social-anxiety {
+    background: linear-gradient(135deg, rgba(219,39,119,0.15), rgba(244,114,182,0.3));
+    color: #be185d;
+  }
+  
+  .autism {
+    background: linear-gradient(135deg, rgba(79,70,229,0.15), rgba(129,140,248,0.3));
+    color: #4338ca;
+  }
+  
+  /* ============================
+     Mobile Menu Button
+     ============================ */
+  .mobile-menu-btn {
+    display: none;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0.5rem;
+    position: absolute;
+    right: 2rem;
+    top: 1.2rem;
+    z-index: 2000;
+  }
+  
+  .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: #6d28d9;
+    border-radius: 3px;
+  }
+  
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .menu-content {
+      display: none;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 1rem;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      box-shadow: 0 4px 20px rgba(31, 38, 135, 0.1);
+      backdrop-filter: blur(10px);
+    }
+  
+    .navbar.active .menu-content {
+      display: block;
+    }
+  
+    .conditions {
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+  
+    .mobile-menu-btn {
+      display: block;
+    }
+  
+    .navbar.active .bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+  
+    .navbar.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+  
+    .navbar.active .bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+  }

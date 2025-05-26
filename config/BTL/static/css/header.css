@@ -1,0 +1,45 @@
+/* ============================
+   Header Styles
+   ============================ */
+   .header {
+    position: relative;
+    height: 12rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .header-text {
+    position: absolute;
+    z-index: 10;
+    font-family: "GalanoGrotesqueW00-Bold", Arial, sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    text-align: center;
+    line-height: 1.5;
+    padding: 0 1rem;
+    color: #000;
+  }
+  
+  .waves {
+    position: absolute;
+    bottom: 27px;
+    width: 150%;
+    height: 191%;
+  }
+  
+  .waves > path {
+    -webkit-animation: a 17390ms ease-in-out infinite alternate-reverse;
+    animation: a 17390ms ease-in-out infinite alternate-reverse;
+    -webkit-animation-timing-function: cubic-bezier(.25,0,.75,1);
+    animation-timing-function: cubic-bezier(.25,0,.75,1);
+    -webkit-will-change: transform;
+    will-change: transform;
+  }
+  
+  /* Wave animation keyframes */
+  @keyframes a {
+    0% { -webkit-transform: translateX(-750px); transform: translateX(-750px); }
+    100% { -webkit-transform: translateX(-20px); transform: translateX(-20px); }
+  }

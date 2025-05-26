@@ -1,0 +1,111 @@
+/* ============================
+   Flip Card Styles
+   ============================ */
+   .flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 380px;
+    perspective: 1000px;
+    margin-bottom: 2rem;
+  }
+  
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 25px rgba(79,70,229,0.15);
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 1.5rem;
+    overflow: hidden;
+  }
+  
+  .flip-card-front {
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .doctor-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .flip-card:hover .doctor-image {
+    transform: scale(1.05);
+  }
+  
+  .flip-card-back {
+    background: linear-gradient(135deg, #ffffff, #4f46e5);
+    color: white;
+    transform: rotateY(180deg);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: inset 0 0 100px rgba(0,0,0,0.2);
+  }
+  
+  /* Doctor info styles */
+  .doctor-name {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    color: #fff;
+  }
+  
+  .doctor-specialization {
+    font-size: 1.125rem;
+    color: #393f4b;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+  
+  .doctor-details p {
+    margin: 1rem 0;
+    color: #fff;
+  }
+  
+  .doctor-details span {
+    font-weight: 500;
+    display: inline-block;
+    min-width: 80px;
+    color: #c4b5fd;
+    margin-right: 0.5rem;
+  }
+  
+  .book-btn {
+    padding: 1rem 2rem;
+    background: #fff;
+    color: #4f46e5;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    align-self: center;
+  }
+  
+  .book-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  }

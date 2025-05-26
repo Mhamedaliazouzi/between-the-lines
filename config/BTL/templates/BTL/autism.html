@@ -1,0 +1,256 @@
+{% extends 'BTL/base_chatbot.html' %}
+{% load static %}
+
+{% block title %}Autism Information{% endblock %}
+
+{% block extra_css %}
+<style>
+    :root {
+        --chat-color: #10B981;
+    }
+    .autism-hero {
+        background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+    }
+    .card-hover:hover {
+        transform: translateY(-5px);
+        transition: all 0.3s ease;
+    }
+    /* Mobile Menu Styles */
+    @media (max-width: 768px) {
+        .navbar .menu-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        .navbar.active .menu-content {
+            display: block;
+        }
+        .navbar .conditions {
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .navbar .condition-tag {
+            margin: 0;
+            width: 100%;
+            text-align: center;
+        }
+        [dir="rtl"] .navbar .menu-content {
+            left: 0;
+            right: 0;
+        }
+        [dir="rtl"] .navbar .conditions {
+            flex-direction: column;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<nav class="navbar">
+    <div class="logo-container">
+        <div class="logo">
+            <img src="{% static 'images/logo.png' %}" alt="Logo">
+        </div>
+        <a class="brand-name" href="{% url 'index' %}">Between The Lines</a>
+    </div>
+    
+    <div class="menu-content">
+        <div class="conditions">
+            <a class="condition-tag adhd" href="{% url 'adhd' %}">
+                <span class="en-text">ADHD</span>
+                <span class="ar-text" style="display: none;">اضطراب فرط الحركة</span>
+            </a>
+            <a class="condition-tag social-anxiety" href="{% url 'social_anxiety' %}">
+                <span class="en-text">Social Anxiety</span>
+                <span class="ar-text" style="display: none;">القلق الاجتماعي</span>
+            </a>
+            <a class="condition-tag autism" href="{% url 'autism' %}">
+                <span class="en-text">Autism</span>
+                <span class="ar-text" style="display: none;">التوحد</span>
+            </a>
+        </div>
+    </div>
+    
+    <button class="mobile-menu-btn">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+</nav>
+
+<section class="autism-hero text-white py-20">
+    <div class="container">
+        <h1 class="text-4xl font-bold mb-4">
+            <i class="fas fa-puzzle-piece mr-2"></i>
+            <span class="en-text">Understanding Autism</span>
+            <span class="ar-text" style="display: none;">فهم التوحد</span>
+        </h1>
+        <p class="text-xl">
+            <span class="en-text">Autism Spectrum Disorder (ASD)</span>
+            <span class="ar-text" style="display: none;">اضطراب طيف التوحد</span>
+        </p>
+    </div>
+</section>
+
+<main class="container my-8">
+    <div class="row g-4">
+        <div class="col-md-6">
+            <div class="card card-hover h-100">
+                <div class="card-body">
+                    <h3 class="card-title text-green-600">
+                        <i class="fas fa-comment-dots mr-2"></i>
+                        <span class="en-text">Key Characteristics</span>
+                        <span class="ar-text" style="display: none;">الخصائص الرئيسية</span>
+                    </h3>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <span class="en-text">Social communication challenges</span>
+                            <span class="ar-text" style="display: none;">تحديات التواصل الاجتماعي</span>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="en-text">Repetitive behaviors</span>
+                            <span class="ar-text" style="display: none;">السلوكيات المتكررة</span>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="en-text">Sensory sensitivities</span>
+                            <span class="ar-text" style="display: none;">الحساسية الحسية</span>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="en-text">Specialized interests</span>
+                            <span class="ar-text" style="display: none;">الاهتمامات المتخصصة</span>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="en-text">Difficulty with transitions</span>
+                            <span class="ar-text" style="display: none;">صعوبة في التغييرات</span>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="en-text">Unique learning patterns</span>
+                            <span class="ar-text" style="display: none;">أنماط تعلم فريدة</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6">
+            <div class="card card-hover h-100">
+                <div class="card-body">
+                    <h3 class="card-title text-green-600">
+                        <i class="fas fa-hands-helping mr-2"></i>
+                        <span class="en-text">Support Strategies</span>
+                        <span class="ar-text" style="display: none;">استراتيجيات الدعم</span>
+                    </h3>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <span class="en-text">Applied Behavior Analysis (ABA)</span>
+                            <span class="ar-text" style="display: none;">تحليل السلوك التطبيقي</span>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="en-text">Speech and language therapy</span>
+                            <span class="ar-text" style="display: none;">علاج النطق واللغة</span>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="en-text">Occupational therapy</span>
+                            <span class="ar-text" style="display: none;">العلاج الوظيفي</span>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="en-text">Social skills training</span>
+                            <span class="ar-text" style="display: none;">تدريب المهارات الاجتماعية</span>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="en-text">Sensory integration therapy</span>
+                            <span class="ar-text" style="display: none;">علاج التكامل الحسي</span>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="en-text">Visual supports and schedules</span>
+                            <span class="ar-text" style="display: none;">الدعم البصري والجداول</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-5">
+        <h3 class="text-2xl font-bold mb-3">
+            <i class="fas fa-link mr-2"></i>
+            <span class="en-text">Resources</span>
+            <span class="ar-text" style="display: none;">الموارد</span>
+        </h3>
+        <div class="list-group">
+            <a href="https://autismspeaks.org" class="list-group-item list-group-item-action">
+                <span class="en-text">Autism Speaks</span>
+                <span class="ar-text" style="display: none;">أوتيزم سبيكس</span>
+            </a>
+            <a href="https://autism-society.org" class="list-group-item list-group-item-action">
+                <span class="en-text">Autism Society</span>
+                <span class="ar-text" style="display: none;">جمعية التوحد</span>
+            </a>
+            <a href="https://www.autism.org.uk" class="list-group-item list-group-item-action">
+                <span class="en-text">National Autistic Society</span>
+                <span class="ar-text" style="display: none;">الجمعية الوطنية للتوحد</span>
+            </a>
+        </div>
+    </div>
+</main>
+
+<footer class="bg-gray-100 py-4 mt-8">
+</footer>
+<div class="fixed-logo">
+    <img src="{% static 'images/logo.png' %}" alt="Logo">
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/autism-chatbot.js' %}"></script>
+<script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navbar = document.querySelector('.navbar');
+    const menuContent = document.querySelector('.menu-content');
+    if (mobileMenuBtn && navbar && menuContent) {
+        mobileMenuBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            navbar.classList.toggle('active');
+            menuContent.style.display = menuContent.style.display === 'block' ? 'none' : 'block';
+            mobileMenuBtn.setAttribute('aria-expanded', 
+                mobileMenuBtn.getAttribute('aria-expanded') === 'false' ? 'true' : 'false'
+            );
+        });
+        // Close menu when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!navbar.contains(event.target) && navbar.classList.contains('active')) {
+                navbar.classList.remove('active');
+                menuContent.style.display = 'none';
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navbar.classList.remove('active');
+                menuContent.style.display = '';
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+
+    // Language change handler
+    window.addEventListener('languageChanged', (event) => {
+        const isRTL = event.detail.language === 'ar';
+        document.querySelectorAll('.en-text').forEach(el => {
+            el.style.display = isRTL ? 'none' : 'inline';
+        });
+        document.querySelectorAll('.ar-text').forEach(el => {
+            el.style.display = isRTL ? 'inline' : 'none';
+        });
+    });
+</script>
+{% endblock %}

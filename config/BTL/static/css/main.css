@@ -1,0 +1,15 @@
+/* Main CSS file that imports all modules */
+@import url('navbar.css');
+@import url('header.css');
+@import url('positivity-card.css');
+@import url('decorative-elements.css');
+@import url('buttons.css');
+@import url('flip-cards.css');
+@import url('animations.css');
+@import url('utilities.css');
+@import url('responsive.css');
+@import url('doctor-detail.css');
+@import url('adhd.css');
+@import url('social_anxiety.css');
+@import url('autism.css');
+

@@ -1,0 +1,86 @@
+/* ============================
+   Animations
+   ============================ */
+
+/* Floating elements animation */
+@keyframes btl-float {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-20px) scale(1.05); }
+  }
+  
+  /* Sparkle animation */
+  @keyframes btl-sparkle {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    20% {
+      transform: scale(1);
+      opacity: 0.8;
+    }
+    40% {
+      transform: scale(0.5);
+      opacity: 0.5;
+    }
+    60% {
+      transform: scale(1.5);
+      opacity: 0.8;
+    }
+    80% {
+      transform: scale(0.8);
+      opacity: 0.5;
+    }
+    100% {
+      transform: scale(0);
+      opacity: 0;
+    }
+  }
+  
+  /* Fade in up animation */
+  @keyframes btl-fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Floating emoji animation */
+  @keyframes btl-floatEmoji {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+  
+  /* Bounce animation */
+  @keyframes btl-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  /* Heart pulse animation */
+  @keyframes btl-pulse {
+    0% { transform: rotate(45deg) scale(1); }
+    25% { transform: rotate(45deg) scale(1.1); }
+    50% { transform: rotate(45deg) scale(1); }
+    75% { transform: rotate(45deg) scale(1.2); }
+    100% { transform: rotate(45deg) scale(1); }
+  }
+  
+  /* Fade in animation */
+  @keyframes btl-fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  /* Fixed logo float animation */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }

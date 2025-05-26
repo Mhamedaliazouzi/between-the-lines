@@ -1,0 +1,150 @@
+/* ============================
+   Positivity Card Styles
+   ============================ */
+   .btl-card-container * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .btl-positivity-card {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    margin: 4rem auto;
+    padding: 3.5rem 2.5rem;
+    border-radius: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    background: white;
+    border: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 0 12px 40px rgba(31,38,135,0.25), 0 6px 12px rgba(0,0,0,0.1);
+    width: 90%;
+    max-width: 650px;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+  
+  .btl-positivity-card:hover {
+    transform: translateY(-12px) rotateX(5deg);
+    box-shadow: 0 25px 50px rgba(31,38,135,0.35), 0 10px 15px rgba(0,0,0,0.15);
+  }
+  
+  /* Content styles */
+  .btl-content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+  
+  .btl-main-heading {
+    font-size: 3.75rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(to right, #4f46e5, #8b5cf6, #db2777, #f97316);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 2px 15px rgba(79,70,229,0.3);
+    opacity: 0;
+    animation: btl-fadeIn 1s forwards 0.2s;
+  }
+  
+  .btl-message-container {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .btl-message {
+    font-size: 1.75rem;
+    font-weight: 600;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: btl-fadeInUp 0.8s forwards;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  .btl-message:hover {
+    transform: scale(1.05);
+    text-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  }
+  
+  .btl-message-1 { 
+    color: #8b5cf6; /* Purple */
+    animation-delay: 0.6s; 
+  }
+  
+  .btl-message-2 { 
+    color: #ec4899; /* Pink */
+    animation-delay: 0.9s; 
+  }
+  
+  .btl-message-3 { 
+    color: #3b82f6; /* Blue */
+    animation-delay: 1.2s; 
+  }
+  
+  .btl-message .btl-emoji {
+    display: inline-block;
+    margin-left: 0.5rem;
+    transform: translateY(0);
+    animation: btl-floatEmoji 2s ease-in-out infinite;
+  }
+  
+  .btl-traits {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    padding: 0.5rem;
+    opacity: 0;
+    animation: btl-fadeIn 1s forwards 1.5s;
+  }
+  
+  .btl-trait {
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    animation: btl-bounce 3s ease-in-out infinite;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.15));
+    font-size: 1.35rem;
+    font-weight: 600;
+    transform: translateZ(0);
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .btl-trait:hover {
+    transform: scale(1.1) translateZ(20px);
+    filter: drop-shadow(0 8px 12px rgba(0,0,0,0.2));
+  }
+  
+  .btl-trait-1 {
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.3), rgba(139, 92, 246, 0.5));
+    color: #333;
+    animation-delay: 0s;
+  }
+  
+  .btl-trait-2 {
+    background: linear-gradient(135deg, rgba(219, 39, 119, 0.3), rgba(244, 114, 182, 0.5));
+    color: #333;
+    animation-delay: 0.25s;
+  }
+  
+  .btl-trait-3 {
+    background: linear-gradient(135deg, rgba(79, 70, 229, 0.3), rgba(129, 140, 248, 0.5));
+    color: #333;
+    animation-delay: 0.5s;
+  }
+  
+  .btl-trait-4 {
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.3), rgba(251, 146, 60, 0.5));
+    color: #333;
+    animation-delay: 0.75s;
+  }

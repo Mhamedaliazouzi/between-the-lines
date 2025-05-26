@@ -1,0 +1,256 @@
+{% extends 'BTL/base_chatbot.html' %}
+{% load static %}
+
+{% block title %}ADHD Information{% endblock %}
+
+{% block extra_css %}
+<style>
+    :root {
+        --chat-color: #3B82F6;
+    }
+    .adhd-hero {
+        background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);
+    }
+    .card-hover:hover {
+        transform: translateY(-5px);
+        transition: all 0.3s ease;
+    }
+    /* Mobile Menu Styles */
+    @media (max-width: 768px) {
+        .navbar .menu-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        .navbar.active .menu-content {
+            display: block;
+        }
+        .navbar .conditions {
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .navbar .condition-tag {
+            margin: 0;
+            width: 100%;
+            text-align: center;
+        }
+        [dir="rtl"] .navbar .menu-content {
+            left: 0;
+            right: 0;
+        }
+        [dir="rtl"] .navbar .conditions {
+            flex-direction: column;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<nav class="navbar">
+    <div class="logo-container">
+        <div class="logo">
+            <img src="{% static 'images/logo.png' %}" alt="Logo">
+        </div>
+        <a class="brand-name" href="{% url 'index' %}">Between The Lines</a>
+    </div>
+    
+    <div class="menu-content">
+        <div class="conditions">
+            <a class="condition-tag adhd" href="{% url 'adhd' %}">
+                <span class="en-text">ADHD</span>
+                <span class="ar-text" style="display: none;">اضطراب فرط الحركة</span>
+            </a>
+            <a class="condition-tag social-anxiety" href="{% url 'social_anxiety' %}">
+                <span class="en-text">Social Anxiety</span>
+                <span class="ar-text" style="display: none;">القلق الاجتماعي</span>
+            </a>
+            <a class="condition-tag autism" href="{% url 'autism' %}">
+                <span class="en-text">Autism</span>
+                <span class="ar-text" style="display: none;">التوحد</span>
+            </a>
+        </div>
+    </div>
+    
+    <button class="mobile-menu-btn">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+</nav>
+
+<section class="adhd-hero text-white py-20">
+    <div class="container">
+        <h1 class="text-4xl font-bold mb-4">
+            <i class="fas fa-bolt mr-2"></i>
+            <span class="en-text">Understanding ADHD</span>
+            <span class="ar-text" style="display: none;">فهم اضطراب فرط الحركة</span>
+        </h1>
+        <p class="text-xl">
+            <span class="en-text">Attention-Deficit/Hyperactivity Disorder</span>
+            <span class="ar-text" style="display: none;">اضطراب نقص الانتباه وفرط النشاط</span>
+        </p>
+    </div>
+</section>
+
+<main class="container my-8">
+    <div class="row g-4">
+        <div class="col-md-6">
+            <div class="card card-hover h-100">
+                <div class="card-body">
+                    <h3 class="card-title text-blue-600">
+                        <i class="fas fa-exclamation-circle mr-2"></i>
+                        <span class="en-text">Key Symptoms</span>
+                        <span class="ar-text" style="display: none;">الأعراض الرئيسية</span>
+                    </h3>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <span class="en-text">Inattention and difficulty focusing</span>
+                            <span class="ar-text" style="display: none;">عدم الانتباه وصعوبة التركيز</span>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="en-text">Hyperactivity and restlessness</span>
+                            <span class="ar-text" style="display: none;">فرط النشاط وعدم الراحة</span>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="en-text">Impulsive behavior</span>
+                            <span class="ar-text" style="display: none;">السلوك الاندفاعي</span>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="en-text">Poor time management</span>
+                            <span class="ar-text" style="display: none;">ضعف إدارة الوقت</span>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="en-text">Difficulty organizing tasks</span>
+                            <span class="ar-text" style="display: none;">صعوبة تنظيم المهام</span>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="en-text">Frequent forgetfulness</span>
+                            <span class="ar-text" style="display: none;">النسيان المتكرر</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6">
+            <div class="card card-hover h-100">
+                <div class="card-body">
+                    <h3 class="card-title text-blue-600">
+                        <i class="fas fa-hand-holding-heart mr-2"></i>
+                        <span class="en-text">Management Strategies</span>
+                        <span class="ar-text" style="display: none;">استراتيجيات الإدارة</span>
+                    </h3>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <span class="en-text">Behavioral therapy</span>
+                            <span class="ar-text" style="display: none;">العلاج السلوكي</span>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="en-text">Stimulant medications (e.g., methylphenidate)</span>
+                            <span class="ar-text" style="display: none;">الأدوية المنشطة (مثل الميثيلفينيدات)</span>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="en-text">Non-stimulant medications (e.g., atomoxetine)</span>
+                            <span class="ar-text" style="display: none;">الأدوية غير المنشطة (مثل الأتوموكسيتين)</span>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="en-text">Cognitive Behavioral Therapy (CBT)</span>
+                            <span class="ar-text" style="display: none;">العلاج المعرفي السلوكي</span>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="en-text">Time management tools</span>
+                            <span class="ar-text" style="display: none;">أدوات إدارة الوقت</span>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="en-text">Regular exercise and nutrition</span>
+                            <span class="ar-text" style="display: none;">التمارين المنتظمة والتغذية</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-5">
+        <h3 class="text-2xl font-bold mb-3">
+            <i class="fas fa-link mr-2"></i>
+            <span class="en-text">Resources</span>
+            <span class="ar-text" style="display: none;">الموارد</span>
+        </h3>
+        <div class="list-group">
+            <a href="https://chadd.org" class="list-group-item list-group-item-action">
+                <span class="en-text">CHADD Organization</span>
+                <span class="ar-text" style="display: none;">منظمة تشاد</span>
+            </a>
+            <a href="https://additudemag.com" class="list-group-item list-group-item-action">
+                <span class="en-text">ADDitude Magazine</span>
+                <span class="ar-text" style="display: none;">مجلة أديتيود</span>
+            </a>
+            <a href="https://www.adhdfoundation.org" class="list-group-item list-group-item-action">
+                <span class="en-text">ADHD Foundation</span>
+                <span class="ar-text" style="display: none;">مؤسسة اضطراب فرط الحركة</span>
+            </a>
+        </div>
+    </div>
+</main>
+
+<footer class="bg-gray-100 py-4 mt-8">
+</footer>
+<div class="fixed-logo">
+    <img src="{% static 'images/logo.png' %}" alt="Logo">
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/adhd-chatbot.js' %}"></script>
+<script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navbar = document.querySelector('.navbar');
+    const menuContent = document.querySelector('.menu-content');
+    if (mobileMenuBtn && navbar && menuContent) {
+        mobileMenuBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            navbar.classList.toggle('active');
+            menuContent.style.display = menuContent.style.display === 'block' ? 'none' : 'block';
+            mobileMenuBtn.setAttribute('aria-expanded', 
+                mobileMenuBtn.getAttribute('aria-expanded') === 'false' ? 'true' : 'false'
+            );
+        });
+        // Close menu when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!navbar.contains(event.target) && navbar.classList.contains('active')) {
+                navbar.classList.remove('active');
+                menuContent.style.display = 'none';
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navbar.classList.remove('active');
+                menuContent.style.display = '';
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+
+    // Language change handler
+    window.addEventListener('languageChanged', (event) => {
+        const isRTL = event.detail.language === 'ar';
+        document.querySelectorAll('.en-text').forEach(el => {
+            el.style.display = isRTL ? 'none' : 'inline';
+        });
+        document.querySelectorAll('.ar-text').forEach(el => {
+            el.style.display = isRTL ? 'inline' : 'none';
+        });
+    });
+</script>
+{% endblock %}
