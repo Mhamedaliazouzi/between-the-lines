@@ -2,10 +2,10 @@ services:
   - type: web
     name: between-the-lines
     env: python
-    buildCommand: ""
-    startCommand: gunicorn config.config.wsgi:application
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn config.wsgi:application
     envVars:
       - key: DJANGO_SETTINGS_MODULE
-        value: config.config.settings
+        value: config.settings
       - key: PYTHON_VERSION
-        value: 3.10.11
+        value: 3.13
